@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import RenderMap from './renderMap';
 
+
 class App extends Component{
         
         
@@ -30,6 +31,7 @@ class App extends Component{
                 this.setState({ theme });
                 this.setState({ nameMap });
                 //this.setState({ nameMap: nameMap});
+                
                 console.log(nameMap);
                 //console.log(this.state.theme);
                 //console.log(this.state.nameMap);
@@ -44,37 +46,38 @@ class App extends Component{
 
                 return(
                         <div >
+                                
                                 <div className="d-flex flex-wrap justify-content-center align-items-center">
                                         <span className={`h1 mb-4 w-100 text-center text-${themeClass}`}>
-                                                {nameMap || 'Default'}
+                                                {nameMap || 'แผนที่แสดงจุดค่าแรงดันท่อประปา'}
                                         </span>
 
                                         <ButtonDropdown isOpen={dropdownOpen} toggle={this.toggleDropdown}>
                                                 <DropdownToggle caret size="sm" color={themeClass}/>
                                                 <DropdownMenu>
-                                                        <DropdownItem onClick={e => this.changeBtn('Primary','Map202006', e)}>Map202006 </DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Primary','June2020', e)}>June2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Success','Map202007', e)}>Map202007</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Success','July2020', e)}>July2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Danger','Map202008', e)}>Map202008</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Danger','August2020', e)}>August2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Warning','Map202009', e)}>Map202009</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Warning','September2020', e)}>September2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Info','Map202010', e)}>Map202010</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Info','October2020', e)}>October2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Light','Map202011', e)}>Map202011</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Light','November2020', e)}>November2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Dark','Map202012', e)}>Map202012</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Dark','December2020', e)}>December2020</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Warning','Map202101', e)}>Map202101</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Warning','January2021', e)}>January2021</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Info','Map202102', e)}>Map202102</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Info','February2021', e)}>February2021</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Light','Map202103', e)}>Map202103</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Light','March2021', e)}>March2021</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={e => this.changeBtn('Dark','Map202104', e)}>Map202104</DropdownItem>
+                                                        <DropdownItem onClick={e => this.changeBtn('Dark','April2021', e)}>April2021</DropdownItem>
                                                         <DropdownItem divider/>
-                                                        <DropdownItem onClick={this.resetTheme}>Default</DropdownItem>
+                                                        <DropdownItem onClick={this.resetTheme}>Pipe-line</DropdownItem>
                                                 </DropdownMenu>
                                         </ButtonDropdown>
                                         
@@ -82,8 +85,9 @@ class App extends Component{
                                 <br/>
                                 
                                 <RenderMap myId={this.state.nameMap}/> 
+                                
                         </div>
-                        
+                                
                 )
         }
 }
